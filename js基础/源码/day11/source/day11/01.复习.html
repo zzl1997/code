@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+	<script type="text/javascript">
+
+
+		/*alert("hello");
+		
+		function fun(){
+			a = 10;
+		}*/
+
+		var name="another"
+		var obj = {
+			name: 'zzl',
+			sayname: function () {
+
+				// console.log(this.name)
+				function test() {
+
+					console.log(this.name)
+
+				}
+
+
+				test()
+			}
+
+
+		}
+		obj.sayname()
+		// 这里竟然输出another？
+
+
+
+
+		var obj = {
+
+			sayHello: function () {
+				//console.log(this);	
+				function test() {
+					console.log(this);
+				}
+				// console.log(this)
+				test();
+
+			}
+
+		};
+
+		obj.sayHello();
+
+		var fun = obj.sayHello;
+
+		fun();
+
+	</script>
+</head>
+
+<body>
+
+</body>
+
+</html>

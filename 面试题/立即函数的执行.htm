@@ -1,0 +1,39 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="list">
+        <li>公司简介</li>
+        <li>联系我们</li>
+        <li>营销网络</li>
+    </ul>
+    <script>
+        var list = document.getElementById("list");
+        var li = list.children;
+        for (var i = 0; i < li.length; i++) {
+            li[i].onclick = function () {
+                alert(i);  // 结果总是3.而不是0，1，2
+            }
+        }
+        // 如果这样写for循环的话，其实，每一次结果都是3的，因此，点击事件的触发是发生在for循环之后，此时i=3
+        //那么解决这个问题可以用立即执行函数来解决
+
+        for (var i = 0; i < li.length; i++) {
+            (function (j) {
+                li[j].onclick = function () {
+                    alert(j)
+                }
+            })(i);
+        }
+
+
+
+    </script>
+</body>
+
+</html>

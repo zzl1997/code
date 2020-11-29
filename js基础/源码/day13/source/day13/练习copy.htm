@@ -1,0 +1,60 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .outer {
+        margin-top: 50px;
+        text-align: center;
+    }
+</style>
+<script>
+    window.onload = function () {
+
+
+        var prev = document.getElementById("prev")
+
+        var next = document.getElementById("next")
+        var list = ["./img/1.jpg", "./img/2.jpg", "./img/3.jpg", "./img/4.jpg", "./img/5.jpg",]
+        var index = 0
+        var imgcontent = document.getElementsByTagName('img')[0]
+        var paracontent=document.getElementsByTagName("p")[0]
+        paracontent.innerHTML="当前一共"+list.length+"张照片，您现在看的是第"+(index+1)+"张"
+
+        prev.onclick = function () {
+            index--
+            if (index<0){
+                index =list.length-1
+            }
+
+            imgcontent.src=list[index]
+            paracontent.innerHTML="当前一共"+list.length+"张照片，您现在看的是第"+(index+1)+"张"
+        }
+        next.onclick = function () {
+            index++
+            
+            if(index==list.length){
+                index=0
+            }
+            imgcontent.src = list[index]
+            paracontent.innerHTML="当前一共"+list.length+"张照片，您现在看的是第"+(index+1)+"张"
+
+        }
+    }
+</script>
+
+<body>
+    <div class='outer'>
+        <p></p>
+        <img src="./img/1.jpg" alt="">
+        <div>
+            <button id="prev">上一张</button>
+            <button id="next">下一张</button>
+        </div>
+    </div>
+</body>
+
+</html>

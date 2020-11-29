@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="btn">我是一个按钮</button>
+		<script type="text/javascript">
+			// 对象分为自定义对象，内建对象（我们已经学完的），宿主对象
+			// 宿主对象就是BOM和DOM
+
+
+			// D:html就是一个文档
+			// O：就是把网页当中的每一个节点都转换成对象，用对象的属性和方法来操作节点
+			// M：大型网页对象很多不好管理，使用模型来管理对象之间的关系，dom树的结构就是模型
+
+
+
+			/*
+			 * 浏览器已经为我们提供 文档节点 对象，这个对象是window属性
+			 * 	可以在页面中直接使用，文档节点代表的是整个网页
+			 */
+			//console.log(document);
+			
+			//获取到button对象
+			var btn = document.getElementById("btn");
+			
+			//修改按钮的文字
+			btn.innerHTML = "I'm Button";
+			
+			
+		</script>
+	</body>
+</html>

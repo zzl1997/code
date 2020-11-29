@@ -1,0 +1,56 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="demo.css"> -->
+</head>
+
+<body>
+    <h1 id="yidong">Web Design</h1>
+    <p>
+        these are the things that you should know
+    </p>
+    <ol id="linklist">
+        <li>
+            <a href=""> Structure</a>
+        </li>
+        <li>
+            <a href="">Presentation</a>
+        </li>
+        <li>
+            <a href=""> Behavior</a>
+        </li>
+    </ol>
+    <div id="slideshow"><img src="1.png" alt="fafdsaf" style="width: 400px;height: 100px;" id="preview"></div>
+
+</body>
+
+<script>
+    function move() {
+
+        if(!document.getElementById("yidong")){alert("no!")}
+        elem.style.position="relative"
+
+        elem.style.left="10px"
+        elem.style.top="20px"
+        elem.style.position="relative"
+        var x = parseInt(elem.style.left)
+        console.log(x)
+        var y = parseInt(elem.style.top)
+        console.log(y)
+        if (x == 50 && y == 50) {
+            return true
+        }
+        if(x<500){x++}
+        if(y<500){y++}
+        elem.style.left=x+"px"
+        elem.style.top=x+"px"
+
+        setTimeout("move()",20)
+    }
+move()
+</script>
+
+</html>

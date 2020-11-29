@@ -1,0 +1,12 @@
+#slideshow{
+
+    width: 100px;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+}
+#yidong{
+    position: relative;
+    left: 50px;
+    right: 50px;
+}
