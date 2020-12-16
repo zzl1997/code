@@ -5,11 +5,16 @@
     <script type="text/javascript">
             
         alert(null == undefined);    //true
+        // js中严格定义的
+
         alert(null === undefined);   //false
         
         alert("NaN" == NaN);        //false
         alert("NaN" === NaN);       //false
         alert(NaN == NaN);          //false
+
+        // NaN不等于NaN，有意思
+        
         alert(NaN === NaN);         //false
         alert(NaN != NaN);          //true
         alert(NaN !== NaN);         //true
