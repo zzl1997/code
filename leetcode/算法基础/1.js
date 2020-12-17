@@ -11,7 +11,6 @@ var twoSum = function (nums, target) {
             map.set(nums[i], i)
         }
 
-
     }
 
 }
