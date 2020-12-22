@@ -2,86 +2,60 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Document</title>
 </head>
 <script>
-    /**
- * @param {string} pattern
- * @param {string} s
- * @return {boolean}
- */
-    var wordPattern = function (pattern, s) {
-        // 同时遍历两个字符串，使用对象关系来进行映射
-        // 那么只可能出现两种情况：
-        // 1.映射关系中没有出现键，新增键值对，
-        // 2.映射关系中出现了键，则比对str中的值和映射表中的值是不是一样，
-        //         如果是的话，不做什么，遍历结束返回true
-        //         如果否的话，直接返回false
-
-        function frequecycheakc(arr1, arr2) {
-            fre1 = {}
-            fre2 = {}
-
-
-            for (let i = 0; i < arr1.length; i++) {
-                if (fre1.hasOwnProperty(arr1[i])) {
-                    arr1[i] += 1
-                } else {
-                    arr1[i] = 0
-                }
-            }
-            for (let i = 0; i < arr2.length; i++) {
-                if (fre2.hasOwnProperty(arr2[i])) {
-                    arr2[i] += 1
-                } else {
-                    arr2[i] = 0
-                }
-            }
-
-            var aProps = Object.getOwnPropertyNames(fre1);
-            var bProps = Object.getOwnPropertyNames(fre2);
-            //判断属性名的length是否一致
-            if (aProps.length != bProps.length) {
-                return false;
-            }
-            //循环取出属性名，再判断属性值是否一致
-            for (var i = 0; i < aProps.length; i++) {
-                var propName = aProps[i];
-                if (a[propName] !== b[propName]) {
-                    return false;
-                }
-            }
-            return true;
+    var isPalindrome = function (x) {
+        // 负数直接返回false
+        // 使用辗转想出发把x的从个位开始给取出来，由于这是反序的
+        // 所以最后比较这个反序的数组和x是不是不一样就可以了
 
 
 
+        if (x < 0) { return false }
+
+        var arr = []
+        var temp = x
+        while ((temp != 0)) {
+            arr.push(temp % 10)
+            temp = Math.floor(temp / 10)
         }
-        var arr1 = pattern.split("");
-        var arr2 = s.split(" ")
-        if (frequecycheakc(arr1, arr2)) {
-            return false
-        }
-        var o = {}
-        for (let i = 0; i < arr1.length; i++) {
-            if (o.hasOwnProperty(arr1[i])) {
-                if (o[arr1[i]] != arr2[i]) {
-                    return false
+        return arr.toString() == x.toString()
+
+
+    }
+    // console.log(isPalindrome(121))
+
+
+
+    var removeElement = function (nums, val) {
+        // 1.循环遍历数组，当前值如果等于val的话：
+        //     将后面的值统统往前移，这个时候删除计数器累加一
+
+        //     最终，要不了整个数组，而是从0到 
+        // };
+        // [0,1,2,2,3,0,4,2] length=8 count=3
+        // 要前五个 slice(0,length-count+1)
+        var count = 0
+        for (let i = 0; i < nums.length; i++) {
+            if (nums[i] == val) {
+                count++
+                for (let j = i ; j < nums.length; j++) {
+                    nums[j] = nums[j + 1]
                 }
-            }
-            else {
-                o[arr1[i]] = arr2[i]
             }
         }
+        return nums.slice(0,nums.length-count)
+        // return nums
+    }
 
-        return true
-
-    };
-    console.log(wordPattern("abba", "dog dog dog dog")
-    )    
+    console.log(removeElement([3, 2, 2, 3]
+        , 3))
 </script>
 
 <body>
+
 
 </body>
 
